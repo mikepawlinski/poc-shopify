@@ -7,9 +7,22 @@ const ProductsQuery = gql`
         node {
           id
           title
-          variants(first: 5) {
+          handle
+          images(first: 5) {
+            nodes {
+              src
+            }
+          }
+          variants(first: 50) {
             nodes {
               sku
+              title
+              image {
+                src
+              }
+              price {
+                amount
+              }
             }
           }
         }
